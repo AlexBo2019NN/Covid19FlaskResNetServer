@@ -17,7 +17,7 @@ class ImageFolderWithPaths(torchvision.datasets.ImageFolder):
         tuple_with_path = (original_tuple + (path,))
         return tuple_with_path
 
-ALLOWED_EXTENSIONS=set(['jpg', 'jpeg'])
+ALLOWED_EXTENSIONS=set(['jpg', 'jpeg'])  #ALLOWED FILE EXTENTION 
 
 def allowed_file(filename):
     return '.' in filename and filename.lower().rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
@@ -26,7 +26,7 @@ def allowed_file(filename):
 app = Flask(__name__)
 
 
-model = torch.load("./static/model_pd.h5")
+model = torch.load("./static/model_gorlo.h5")
 
 UPLOAD_FOLDER = './uploads/unknown'
 data_root = './uploads'
@@ -64,7 +64,7 @@ def get_prediction():
 
     inputs, labels, paths = next(iter(test_dataloader))
     submission_df = pd.DataFrame.from_dict({'id': test_img_paths, 'label': test_predictions})
-    submission_df['label'] = submission_df['label'].map(lambda pred: 'porno yes' if pred > 0.5 else 'porno no')
+    submission_df['label'] = submission_df['label'].map(lambda pred: 'red' if pred > 0.5 else 'normal')
     submission_df['id'] = submission_df['id'].str.replace('uploads/unknown/', '')
     submission_df['id'] = submission_df['id'].str.replace('.jpg', '')    
     return submission_df
@@ -85,14 +85,14 @@ def upload_file():
     return '''
     <!doctype html>
     <head>
-    <title> PORNO DETECT SERVER</title>
+    <title> STOP CORONOVID SERVER</title>
     </head>
     <body>
-    <h1> Porno detect project :</h1>
+    <h1> STOP CORONOVID19 project :</h1>
     <p align=center><img src="\static\stop_p.png"
         alt="Town trip"></p>
-    <p> Chek foto for porno.
-    Server detect porno.</p>    
+    <p> Chek foto of throat for Coronovid-19 and over disease.
+    Server detect flue.</p>    
     <title>Upload new File</title>
     <h1>Upload new File</h1>
     <form action="" method=post enctype=multipart/form-data>
