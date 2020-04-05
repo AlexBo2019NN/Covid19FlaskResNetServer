@@ -88,17 +88,45 @@ def upload_file():
     <title> STOP CORONOVID SERVER</title>
     </head>
     <body>
-    <h1> STOP CORONOVID19 project :</h1>
+    <h1 align=center> STOP CORONOVID19 project by DataStalker:</h1>
     <p align=center><img src="\static\stop_p.png"
         alt="Town trip"></p>
     <p> Chek foto of throat for Coronovid-19 and over disease.
     Server detect flue.</p>    
     <title>Upload new File</title>
-    <h1>Upload new File</h1>
+    <table>
+   <tr>
+    <th>
+    <p>Upload new File</p>
     <form action="" method=post enctype=multipart/form-data>
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
+
+    </th>
+    <th>
+        <p>COVID-19 is an viral respiratory infections agent that shows pronounced intoxication of the body and problems with the respiratory and digestive systems</p></th>
+   </tr>
+   <tr>
+    <td>
+        <p>COVID-19 spreads:
+Air-drip in case of sneezing and coughing;
+In the contact way
+<p>What to do if you have COVID-19 symptoms:</p>
+<p>see a doctor;
+Not to self-medicate</p> </p>
+
+</td>
+    <td>
+        <p><p>How to prevent COVID-19:</p>
+<p>Do not go to the focus of the disease;</p>
+<p>Avoid attending mass events;</p>
+<p>CAREFULLY WASH HANDS;</p>
+<p>Use medical masks;</p>
+<p>Avoid close contact with people who have symptoms of the disease.</p> </p>
+</td>
+  </tr>
+ </table>
     </body>
     </html>
     '''
